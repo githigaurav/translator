@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Translate v2.0</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+<div class="container-fluid bg-light" id="resContainer">
+
+  <div class="container-fluid   text-center pt-5 py-5 " id="resCont" >
+    
+    <div class="row  ">
+      <div class="col-sm-12 col-md-6 col-lg-6 p-2">
+  
+        <label for="originalText " class="py-2">Original Text</label>
+        <!-- we are adding grammerly so that we can correct some english words if something missign while extracting -->
+        <grammarly-editor-plugin>
+          <textarea name="translate -1" id="originalText" cols="50" rows="15" class="form-control"></textarea>
+        </grammarly-editor-plugin>
+  
+            <div class="form-group mt-2">
+              <select name="language" id="languageupdate" class="form-control">
+                <option value="" class="dropdown-item">Select Your Language</option>
+                <option value="hi" class="dropdown-item">Hindi</option>
+                <option value="en" class="dropdown-item">English</option>
+                <option value="fr" class="dropdown-item">French</option>
+                <option value="es" class="dropdown-item">Spanish</option>
+                <option value="de" class="dropdown-item">German</option>
+                <option value="zh" class="dropdown-item">Chinese</option>
+                <option value="ja" class="dropdown-item">Japanese</option>
+                <option value="it" class="dropdown-item">Italian</option>
+                <option value="pt" class="dropdown-item">Portuguese</option>
+                <option value="ru" class="dropdown-item">Russian</option>
+                <option value="ar" class="dropdown-item">Arabic</option>
+                <option value="ko" class="dropdown-item">Korean</option>
+                <option value="nl" class="dropdown-item">Dutch</option>
+                <option value="sv" class="dropdown-item">Swedish</option>
+                <option value="pl" class="dropdown-item">Polish</option>
+                <option value="el" class="dropdown-item">Greek</option>
+                <option value="tr" class="dropdown-item">Turkish</option>
+                <option value="th" class="dropdown-item">Thai</option>
+                <option value="cs" class="dropdown-item">Czech</option>
+                <option value="da" class="dropdown-item">Danish</option>
+              </select>
+            </div>
+            <span id="updateReq" class="text-danger"></span>
+  
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6 p-2">
+  
+  
+        <label for="translateme " class="py-2">Translated Text</label>
+        <grammarly-editor-plugin>
+          <textarea name="translate" id="translateme" cols="50" rows="15" class="form-control"></textarea>
+          <grammarly-editor-plugin>
+  
+            <div class="form-group mt-2">
+              <button onclick="speakText()">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button onclick="stopSpeaking()">
+                <i class="fa-solid fa-stop"></i>
+              </button>
+            </div>
+      </div>
+  
+    </div>
+    <div class="pt-2">
+      <button class="btn btn-primary" id="update">UPDATE</button>
+      <button class="btn btn-primary" id="clear">CLEAR</button>
+      <hr />
+  
+      <div>
+        <button class="btn btn-primary" id="pdf" onclick="downloadAsPdf()">PDF</button>
+        <button class="btn btn-primary" onclick="Export2Doc('translateme');">DOC</button>
+        <button class="btn btn-primary" id="getAudio">Audio</button>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<script src="https://cdn.socket.io/4.6.0/socket.io.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@grammarly/editor-sdk?clientId=client_MZoUVXv3wGiC4HPZghBPcg"></script>
+
+<!-- Bootstrap JavaScript Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+<script src="hoem.js"></script>
+
+
+
+</body>
+
+</html>
