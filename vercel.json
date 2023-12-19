@@ -1,10 +1,9 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "./views/index.ejs",
-        "use": "@vercel/node",
-        "config":{"includeFiles":["views/**"]}
-      }
+    "version":2,
+    "builds":[
+        {
+           "src":"views/index.ejs",
+           "use":"@vercel/node"
+        }
     ]
-  }
+}
