@@ -3,15 +3,8 @@
     "builds": [
       {
         "src": "./views/index.ejs",
-        "use": "@now/node"
-      }
-    ],
-    "routes": [
-      {
-          
-        "src": "/(.*)",
-        
-        "dest": "index.js"
+        "use": "@vercel/node",
+        "config":{"includeFiles":["views/**"]}
       }
     ]
   }
