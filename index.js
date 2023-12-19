@@ -18,7 +18,9 @@ const userRoutes = require('./routes/userRoutes')
  
 
 server.use('/', userRoutes)
-
+server.get('/',(req, res)=>{
+  res.render('index.ejs')
+})
 // setting up socket.io
 const { webSocket } = require("./socket") 
 const eserver = require('http').createServer(server)
